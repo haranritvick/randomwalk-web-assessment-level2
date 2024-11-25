@@ -1,0 +1,169 @@
+/* Default Light Theme */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fffae6;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative; /* Positioning context for toggle button */
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #f76c6c;
+    font-size: 2.5em;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff7c0;
+    border: 2px solid #6c757d;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #ffe066;
+}
+
+.scorecard {
+    margin-bottom: 20px;
+    color: #495057;
+}
+
+#status {
+    font-size: 1.2em;
+}
+
+#restart {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #495057;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#restart:hover {
+    background-color: #343a40;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#themeButton {
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: #f76c6c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#themeButton:hover {
+    background-color: #ff4c4c;
+}
+
+/* Dark Theme */
+body.dark {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #fff;
+}
+
+body.dark .container {
+    background-color: #2c2a48;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+body.dark h1 {
+    color: #ff9f43;
+    text-shadow: 0 0 10px #ff9f43;
+}
+
+body.dark .cell {
+    background-color: #3e416d;
+    border-color: #6c88a0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .cell:hover {
+    background-color: #4a4d7a;
+    box-shadow: 0 0 10px rgba(255, 159, 67, 0.6);
+}
+
+body.dark #restart {
+    background-color: #ff9f43;
+    color: #2c2a48;
+}
+
+body.dark #restart:hover {
+    background-color: #ffb74d;
+}
+
+body.dark .scorecard {
+    color: #ff9f43;
+    text-shadow: 0 0 5px #ff9f43;
+}
+
+#themeButton.dark-mode {
+    background-color: #ff9f43;
+    color: #2c2a48;
+}
+
+@media (max-width: 600px) {
+    .board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5em;
+    }
+}
+
+
+/* Additional styles for scorecard */
+.scores {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #495057; /* Light theme color */
+}
+
+body.dark .scores {
+    color: #ff9f43; /* Dark theme color */
+}
